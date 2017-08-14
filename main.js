@@ -23,6 +23,7 @@ $(function(){
 
     //取消搜索门店
     $('.cancel').click(function(){
+        //animate执行完一个动画再执行另一个函数
         // $('.search').animate({left:"100%"},300,function(){
         //     $('.search').css({display:"none"});
         // });
