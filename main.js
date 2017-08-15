@@ -3,11 +3,21 @@
  */
 window.onload=function(){
     //全部品类点击切换折叠菜单
-    $('.esp').click(function(){
-       $('.category-list').slideToggle(100);
+    $('.esp').click(function(event){
+        $('.category-list').slideToggle(100);
         $(this).children('i').toggleClass('change-bg');
+        // console.log($('.box').className);
         $('.box').toggleClass('show');
-    });
+        $('body').css({'overflow':"hidden"});
+        event.stopPropagation();
+    })
+    //点击除了全部品类外其他页面部分使折叠菜单消失
+    $('*:not(".esp")').click(function(){
+            $('.category-list').slideUp(100);
+            $('.esp').children('i').removeClass('change-bg');
+            $('.box').removeClass('show');
+            $('body').css({'overflow':"scroll"});
+    })
 
     //导航切换
     $('.nav ul li:not(".esp")').click(function(){
@@ -16,19 +26,30 @@ window.onload=function(){
     });
 
     //搜索门店
-    $('.search-btn').click(function(){
-        $('.search').slideToggle(200);
-        $('.box').addClass('show',300);
+    $('.search-btn').click(function(event){
+        $('.search').slideToggle(100);
+        $('.box').addClass('show');
+        $('body').css({'overflow':"hidden"});
+        // console.log($('.box').className);
+        event.stopPropagation();
     });
+    //取消搜索门店
+    $('*:not(".search*,.search-btn")').click(function(){
+        $('.search').slideUp(200);
+        $('.box').removeClass('show');
+        $('body').css({'overflow':"scroll"});
+    })
 
     //取消搜索门店
-    $('.cancel').click(function(){
+    $('.cancel').click(function(event){
         //animate执行完一个动画再执行另一个函数
         // $('.search').animate({left:"100%"},300,function(){
         //     $('.search').css({display:"none"});
         // });
-        $('.search').slideToggle(200);
+        $('.search').slideUp(200);
         $('.box').removeClass('show');
+        $('body').css({'overflow':"scroll"});
+        event.stopPropagation();
     });
 
     //显示或收缩活动
