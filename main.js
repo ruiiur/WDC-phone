@@ -1,7 +1,7 @@
 /**
  * Created by Administrator on 2017/8/11.
  */
-$(function(){
+window.onload=function(){
     //全部品类点击切换折叠菜单
     $('.esp').click(function(){
        $('.category-list').slideToggle(100);
@@ -56,4 +56,4 @@ $(function(){
             $('.stores-list li:eq(' + index + ')').find('.activity').children('ul').siblings(".all-activity").hide();
         }
     })
-});
+};
