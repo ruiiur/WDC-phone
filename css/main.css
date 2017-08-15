@@ -232,7 +232,7 @@ body, div, dl, dt, dd, ul, li, h1, h2, h3, h4, h5, h6, form, input, textarea, p,
       vertical-align: middle; }
     .search > div:nth-child(1) input::-webkit-input-placeholder {
       background: url("../images/search-icon1.png") no-repeat 0 center;
-      background-size: 0.0625rem;
+      background-size: 0.8125rem;
       font-size: 0.75rem;
       color: #999;
       padding-left: 1.5625rem; }
