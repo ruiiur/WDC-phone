@@ -7,7 +7,7 @@ window.onload=function(){
         $('.category-list').slideToggle(100);
         $(this).children('i').toggleClass('change-bg');
         $('.box').toggleClass('show');
-        $('body').css({'overflow':"hidden"});
+        $('body').css({'overflow':"hidden",'height':'100%'});
         event.stopPropagation();
     })
     //阻止冒泡事件
@@ -26,6 +26,11 @@ window.onload=function(){
         $('body').css({'overflow':"scroll"});
     })
 
+    $('*:not(".search *")').click(function(){
+        $('.box').removeClass('show');
+        $('body').css({'overflow':"scroll"});
+    })
+
     //导航切换
     $('.nav ul li:not(".esp")').click(function(){
         $(this).attr("class","active").siblings("li:not('.esp')").attr("class","");
@@ -36,7 +41,7 @@ window.onload=function(){
     $('.search-btn').click(function(event){
         $('.search').slideToggle(100);
         $('.box').addClass('show');
-        $('body').css({'overflow':"hidden"});
+        $('body').css({'overflow':"hidden",'height':'100%'});
         // console.log($('.box').className);
         event.stopPropagation();
     });
