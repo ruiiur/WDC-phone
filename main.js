@@ -25,11 +25,7 @@ window.onload=function(){
         $('.box').removeClass('show');
         $('body').css({'overflow':"scroll"});
     })
-
-    $('*:not(".search *")').click(function(){
-        $('.box').removeClass('show');
-        $('body').css({'overflow':"scroll"});
-    })
+    
 
     //导航切换
     $('.nav ul li:not(".esp")').click(function(){
